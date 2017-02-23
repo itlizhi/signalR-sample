@@ -55,6 +55,7 @@
     <Compile Include="LogExtention.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedisManager.cs" />
+    <Compile Include="SignalRMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

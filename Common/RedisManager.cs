@@ -291,27 +291,6 @@ namespace Common
 
         #endregion 添加序列化方法
 
-        /// <summary>
-        /// 推送消息到订阅者
-        /// </summary>
-        /// <param name="channel"></param>
-        /// <param name="message"></param>
-        public static void PublishMessage(string channel, string message)
-        {
-            try
-            {
-                ISubscriber sub = GetConnInstance().GetSubscriber();
-                var received = sub.Publish(channel, message);
-                if (received <= 0)
-                {
-                    //如果没有订阅者，记录错误日志
-                    LogExtention.Instance().Error(null, channel, message);
-                }
-            }
-            catch (Exception ex)
-            {
-                LogExtention.Instance().Error(ex, channel, message);
-            }
-        }
+     
     }
 }
