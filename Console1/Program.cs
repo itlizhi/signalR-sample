@@ -16,7 +16,7 @@ namespace Console1
                 //模拟推送消息
                 SignalRPub.PublishSubscriber(SignalRChannel.Demo, new SignalRMessage()
                 {
-                    RecipientId = "123",
+                    RecipientId = "admin",
                     Message = DateTime.Now.ToString()
                 });
                 Thread.Sleep(2000);

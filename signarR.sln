@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "signarR", "signarR\signarR.csproj", "{A9BD5C18-70B7-4548-96EF-A792451E12E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "signalR", "signarR\signalR.csproj", "{A9BD5C18-70B7-4548-96EF-A792451E12E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console1", "Console1\Console1.csproj", "{C41A37D2-660A-4525-8370-65F9D07252A7}"
 EndProject

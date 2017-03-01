@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h2>socket test</h2>
+    <div id="content">
+
+    </div>
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.1.js"></script>
+    <script type="text/javascript">
+        //连接socket
+        var connection = $.hubConnection("http://localhost:4015/socket");
+
+        var demoHubProxy = connection.createHubProxy('demoHub');//代理hub
+
+        //代理连接成功调用方法 ，服务端调用（写在start 的前面）
+        demoHubProxy.on('callback', function (message) {
+            console.log(message);
+        });
+
+        //代理服务端调推送消息
+        demoHubProxy.on('push', function (message) {
+            console.log(message);
+        });
+
+        //连接，这个只会调用一次
+        connection.start().done(function () {
+            console.log("connection started. Id=" + connection.id + ". Transport=" + connection.transport.name);
+        })
+
+        //重新连接
+        connection.reconnected(function () {
+            console.log('Reconnected');
+        });
+
+        //连接状态改变
+        connection.stateChanged(function (change) {
+            if (change.newState === $.signalR.connectionState.reconnecting) {
+                console.log('re-connecting');
+            }
+            else if (change.newState === $.signalR.connectionState.connected) {
+                console.log('the server is online');
+            }
+        });
+
+
+    </script>
+</body>
+</html>
